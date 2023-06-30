@@ -91,9 +91,9 @@ WHERE avg_math_4_score IS NULL
 ```
 SELECT n.state, ROUND(n.avg_math_4_score, 2) AS avg_math_4_score, f.total_expenditure
 FROM naep AS n
-	LEFT OUTER JOIN finance AS f ON n.id = f.id
+LEFT OUTER JOIN finance AS f ON n.id = f.id
 WHERE n.year = '2000'
-	AND avg_math_4_score IS NOT NULL
+    AND avg_math_4_score IS NOT NULL
 ORDER BY f.total_expenditure DESC;
 ```
 
