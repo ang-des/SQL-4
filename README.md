@@ -23,9 +23,9 @@ LIMIT 50;
 3. Write a query that returns summary statistics for avg_math_4_score by state. Do this by using aliases, such as COUNT(avg_math_4_score) as count_4, and repeat this for the remaining aliases avg_4, min_4, and max_4, for AVG, MIN, and MAX, respectively. Finally, sort the results alphabetically by state name.
 ```
 SELECT state, COUNT(avg_math_4_score) AS count_4,
-			  AVG(avg_math_4_score) AS avg_4,
-			  MIN(avg_math_4_score) AS min_4,
-			  MAX(avg_math_4_score) AS max_4
+		AVG(avg_math_4_score) AS avg_4,
+		MIN(avg_math_4_score) AS min_4,
+		MAX(avg_math_4_score) AS max_4
 FROM naep
 GROUP BY state
 ORDER BY state;
@@ -36,9 +36,9 @@ ORDER BY state;
 4. Write a query that alters the previous query so that it returns only the summary statistics for avg_math_4_score by state with differences in max and min values that are greater than 30.
 ```
 SELECT state, COUNT(avg_math_4_score) AS count_4,
-			  AVG(avg_math_4_score) AS avg_4,
-			  MIN(avg_math_4_score) AS min_4,
-			  MAX(avg_math_4_score) AS max_4
+		AVG(avg_math_4_score) AS avg_4,
+		MIN(avg_math_4_score) AS min_4,
+		MAX(avg_math_4_score) AS max_4
 FROM naep
 GROUP BY state
 HAVING (MAX(avg_math_4_score) - MIN(avg_math_4_score)) > 30
@@ -72,7 +72,7 @@ WHERE year = '2000';
 SELECT state AS below_250
 FROM naep
 WHERE avg_math_4_score < 250
-	AND year = '2000';
+    AND year = '2000';
 ```
 
 <br>
@@ -82,7 +82,7 @@ WHERE avg_math_4_score < 250
 SELECT state AS scores_missing_y2000
 FROM naep
 WHERE avg_math_4_score IS NULL
-	AND year = '2000';
+    AND year = '2000';
 ```
 
 <br>
